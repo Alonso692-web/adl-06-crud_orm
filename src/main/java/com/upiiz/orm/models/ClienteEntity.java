@@ -55,12 +55,14 @@ public class ClienteEntity {
     @Column(unique = true)
     private String email;
     @NotBlank
+    @Pattern(regexp = "")
     private String telefono;
     @NotBlank
     private String direccion;
     @Min(18)
     private int edad;
     @NotBlank
+    @Pattern(regexp = "")
     private String rfc;
 
 
