@@ -26,4 +26,21 @@ public class ClienteController {
         return ResponseEntity.ok(clienteService.guardarCliente(cliente));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<ClienteEntity> getCliente(@PathVariable Long id) {
+        return ResponseEntity.ok(clienteService.obtenerClientePorId(id));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminarCliente(@PathVariable Long id) {
+        clienteService.deleteCliente(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ClienteEntity> updateCliente(@PathVariable Long id, @RequestBody ClienteEntity cliente) {
+        cliente.setId(id); // Aseguramos que el ID sea el correcto
+        return ResponseEntity.ok(clienteService.updateCliente(cliente));
+    }
+
 }
