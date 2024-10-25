@@ -21,10 +21,6 @@ public interface ClienteRepository extends JpaRepository<ClienteEntity, Long> {
     @Query("SELECT c FROM ClienteEntity c WHERE c.id = :id")
     ClienteEntity findClienteById(@Param("id") Long id);
 
-    // Métodos para buscar cliente por email (ejemplo de consulta adicional)
-    @Query("SELECT c FROM ClienteEntity c WHERE c.email = :email")
-    ClienteEntity findByEmail(@Param("email") String email);
-
     // Métodos para actualizar cliente
     @Query("UPDATE ClienteEntity c SET c.nombre = :nombre, c.email = :email WHERE c.id = :id")
     void updateCliente(@Param("id") Long id, @Param("nombre") String nombre, @Param("email") String email);
