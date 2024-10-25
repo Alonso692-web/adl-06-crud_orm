@@ -55,14 +55,13 @@ public class ClienteEntity {
     @Column(unique = true)
     private String email;
     @NotBlank
-    @Pattern(regexp = "/^[1-9]\\d{9}$/")
     private String telefono;
     @NotBlank
     private String direccion;
     @Min(18)
     private int edad;
     @NotBlank
-    @Pattern(regexp = "^[A-ZÑ&]{3,4}[0-9]{2}[0[1-9]|1[0-2]][0-3][0-9][A-Z0-9]{2}[A-Z0-9]{3}$")
+    //@Pattern(regexp = "^[A-ZÑ&]{3,4}[0-9]{2}[0[1-9]|1[0-2]][0-3][0-9][A-Z0-9]{2}[A-Z0-9]{3}$")
     private String rfc;
 
 
